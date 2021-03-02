@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<p id="demo">p tag id demo</p> <!-- 일반태그 입력받는게 없다-->
+
+<input type="text" id="text" value="" size="20"> <!-- form 태그  -->
+<br>
+
+<input type="button" value="input button" onclick="btnclick()">
+<br>
+
+<script type="text/javascript">
+function btnclick() {
+	alert("btnclick() 호출");
+	document.getElementById("demo").innerHTML = "버튼이 클릭됨!!";
+	let text  = document.getElementById("text").value;
+	alert("text:" + text);
+	document.getElementById("text").value = "World!!";
+}
+
+</script>
+<br><br>
+
+<input type="button" value="input button" onclick="btnfunc(1)">
+<br>
+<button type="button" onclick="btnfunc(2)"> button tag </button>
+
+<script type="text/javascript">
+function btnfunc(num) {
+	let name;
+	if (num==1) {
+		name = 'input button click'
+	}else {
+		name = 'button tag click'
+	}
+	alert(name);
+	document.getElementById("demo").innerHTML = sum(3,6);
+	document.getElementById("text").value = sum(3,6);
+}
+function sum(x,y){
+	return x * y;
+}
+
+
+</script>
+
+<br><br>
+
+입력:<input type="text" id="num" value="123">
+<br><br>
+<button type="button" onclick="inputclick()">클릭</button>
+
+<script type="text/javascript">
+function inputclick() {
+	let num = document.getElementById("num").value;
+	document.getElementById("num").value = parseInt(num) + 3;
+}
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<p id="demo">p tag id demo</p>
+
+<script type="text/javascript">
+// 여기는 Java Script 영역
+console.log('Java Script가 실행되었음');
+//alert('Java Script가 실행');//모달 창이 뜸
+// let 변수형
+var v = document.getElementById("demo").innerHTML // getter
+alert(v);
+
+document.getElementById("demo").innerHTML = 'id demo tag p'; // setter
+ 
+var obj = document.getElementById("demo");//p라는 오브젝을 가져온다 p tag를 getter로 가져온 것
+alert(obj.innerHTML);
+
+
+</script>
+
+
+</body>
+</html>

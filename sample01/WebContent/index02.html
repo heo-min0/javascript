@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="myScript.js"> //internal
+/* function func() {
+	alert('internal func 호출');
+	document.getElementById().innerHTML='Hello';
+} */
+</script>
+
+
+</head>
+<body>
+
+<p id="myP" >여기가 p tag 입니다</p>
+<p id="demo" onclick="alert('p tag click')">여기가 p tag 입니다</p>
+<p id="demo" onclick="func()">여기가 p tag 입니다</p>
+
+<script type="text/javascript">
+/* function func() {
+	alert('func 호출');
+	document.getElementById().innerHTML='Hello';
+} */
+</script>
+
+</body>
+</html>

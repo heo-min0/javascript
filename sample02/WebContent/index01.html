@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<p id="demo"></p>
+ <br>
+ <input type="text" id="text" size="50">
+
+<script type="text/javascript">
+function displayDate() {
+	 document.getElementById('demo').innerHTML = Date();
+	 document.getElementById('text').value = Date();
+}
+//displayDate();
+setInterval("displayDate()", 1000);
+</script>
+
+<br><br>
+
+<p id="date"></p>
+
+<script type="text/javascript">
+let d = new Date();
+
+d = new Date(2021, 6 -1, 23, 6, 20, 10, 0); //setter
+d = new Date("October 12, 2021 12:23:35");
+
+document.getElementById('date').innerHTML = d; //전체 날짜 + 시간
+/* document.getElementById('date').innerHTML = d.getDay(); // 요일
+document.getElementById('date').innerHTML = d.getFullYear();
+document.getElementById('date').innerHTML = d.getMonth()+1;
+document.getElementById('date').innerHTML = d.getDate();
+document.getElementById('date').innerHTML = d.getHours();
+document.getElementById('date').innerHTML = d.getMinutes();
+document.getElementById('date').innerHTML = d.getSeconds(); */
+
+/* function displayDate() {
+	document.getElementById('demo').innerHTML = Date();
+	document.getElementById('text').value = Date();
+}
+//displayDate();
+setInterval("displayDate()", 1000); */
+</script>
+
+</body>
+</html>
