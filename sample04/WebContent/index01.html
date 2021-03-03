@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<a href="NewFile.jsp?name=홍길동&age=24">NewFile.jsp로 이동</a>
+<br><br>
+
+
+<form action="NewFile.jsp"> <!--form형태는 데이터를 넘길때 검사를 못하네... -->
+이름 : <input type="text" name="name">
+<br>
+나이 : <input type="text" name="age">
+<br>
+<input type="submit" value="이동">
+</form>
+<br><br>
+
+
+이름 : <input type="text" id="name">
+<br>
+나이 : <input type="text" id="age">
+<br>
+<button type="button" onclick="btn()">이동</button>
+
+<script type="text/javascript">
+function btn() {
+	let name = document.getElementById("name").value;
+	let age = document.getElementById("age").value;
+	location.href = "NewFile.jsp?name=" + name
+				  + "&age=" + age
+}
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

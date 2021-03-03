@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div id="bd">
+<h1>배경색의 변경</h1>
+<p>다음버튼</p>
+<button type="button" onclick="chg(0)">빨강</button>
+<button type="button" onclick="chg(1)">녹색</button>
+<button type="button" onclick="chg(2)">청색</button>
+<button type="button" onclick="chg(3)">주황색</button>
+<button type="button" onclick="chg(4)">검정색</button>
+<button type="button" onclick="chg(5)">흰색</button>
+</div>
+
+<script type="text/javascript">
+let obj = document.getElementById('bd')
+function chg(num){
+	obj.style.color = 'black';
+	switch (num) {
+		case 0:obj.style.backgroundColor = 'red'; break;
+		case 1:obj.style.backgroundColor = 'green'; break;
+		case 2:obj.style.backgroundColor = 'blue'; break;
+		case 3:obj.style.backgroundColor = 'orange'; break;
+		case 4:obj.style.backgroundColor = 'white'; break;
+		case 5:obj.style.backgroundColor = 'black';
+			   obj.style.color = 'white'; break;
+	}
+}
+</script>
+
+<br><br><br>
+
+<div>
+<h1>환영합니다.</h1>
+현재시간은
+<input type="text" id="t02" size="6">
+입니다.
+</div>
+
+<script type="text/javascript">
+function displayTime() {
+	let d = new Date();
+	let h = d.getHours();
+	let m = d.getMinutes();
+	let s = d.getSeconds();
+	if(h<10){h = "0" + h;}
+	if(m<10){m = "0" + m;}
+	if(s<10){s = "0" + s;}
+	document.getElementById("t02").value = h + ":" + m + ":" +	s;
+}
+setInterval("displayTime()", 1000);
+</script>
+
+<br><br><br>
+
+<h3>(문제)</h3>
+<p>1일 1개씩 과일?</p>
+<input type="checkbox" id="eng">영어소문자 선택<br>
+답 : <input type="text" id="t03">
+<button type="submit" onclick="chk()">답체크</button>
+<p id="t04"></p>
+
+<script type="text/javascript">
+function chk() {
+	let eng = document.getElementById("eng").checked;
+	let ans = document.getElementById("t03").value;
+	if (eng == true && ans == "apple") {
+		document.getElementById("t04").innerHTML = "정답"; 
+	}else if(ans == "apple" || ans == '사과') {
+		document.getElementById("t04").innerHTML = "정답"; 
+	}else{
+		document.getElementById("t04").innerHTML = "오답";
+	}
+}
+</script>
+
+<br><br><br>
+
+<div>
+<h1>미술관 및 박물관의 링크</h1>
+<select id="t05" onchange="lin()">
+	<option>대상을 선택</option>
+	<option>미술관--------</option>
+	<option value="http://sema.seoul.go.kr/">서울시립미술관</option>
+	<option value="http://www.mmca.go.kr/">국립현대미술관</option>
+	<option value="http://www.mmca.go.kr/">예술의전당</option>
+	<option>박물관--------</option>
+	<option value="http://www.museum.go.kr/">국립중앙박물관</option>
+	<option value="http://www.museum.seoul.kr/">서울역사박물관</option>
+	<option value="http://www.nfm.go.kr/">국립민속박물관</option>
+</select>
+</div>
+
+<script type="text/javascript">
+function lin() {
+	let index = document.getElementById("t05").selectedIndex;
+	let url = document.getElementById("t05").options[index].value;
+	location.href = url;
+}
+</script>
+
+<br><br><br>
+
+<h1>2개의 주사위</h1>
+<p>버튼 클릭하면 2개 주사위 랜덤</p>
+<span>
+<img alt="" src="./img/sai_1.gif" id="i01">
+<img alt="" src="./img/sai_6.gif" id="i02">
+</span>
+<br>
+<button type="button" onclick="rann()">주사위를 굴린다</button>
+
+<script type="text/javascript">
+function ran() {
+	let r = (Math.random()*6) + 1;
+	let ra = Math.floor(r); //Math.ceil() 버림
+	return ra;
+}
+function rann() {
+	let a = ran();
+	let b = ran();
+	//document.getElementById("i01").src = "./img/sai_" + a + ".gif" 
+	document.images[0].src = "./img/sai_" + a + ".gif";
+	document.getElementById("i02").src = "./img/sai_" + b + ".gif"
+}
+</script>
+
+<br><br><br>
+
+<div>
+<h1>다음 생일까지 남은 일수</h1>
+<p>다음 버튼 클릭하여 생일 입력하면 남은 일수 보여줌</p> 
+<button type="button" onclick="hid()">생일을 입력</button>
+<button type="button" onclick="bir1()">생일을 입력</button>
+</div>
+<br>
+<div id="t09" style="visibility: hidden;">
+월<input type="text" id="t07" size="5">
+일<input type="text" id="t08" size="5">
+<button type="submit" onclick="bir()">확인</button>
+</div>
+<p id="t10"></p>
+남은 일수:<h3 id="days"></h3>
+
+<script type="text/javascript">
+function hid() {
+	document.getElementById("t09").style.visibility = "visible";
+}
+
+function bir() {
+	let d1 = new Date();
+	let ye = d1.getFullYear();
+	let mo = document.getElementById("t07").value;
+	let da = document.getElementById("t08").value;
+	let nbi = new Date(ye+1, mo-1, da, 0, 0, 0, 0, 0);
+	
+	let k = 24*60*60*1000; 	//86400000 하루 밀리초
+	let day = (nbi - d1)/k;
+	if (day>364) {
+		day = day-364;
+	}
+	document.getElementById("t10").innerHTML = Math.floor(day) + "일";
+}
+
+function bir1() {
+	//prompt() 입력용
+	let birthMonth = prompt('생일 월을 입력해 주십시오(1 ~ 12)');
+	let birthDay = prompt("생일 날짜를 입력해 주십시오(1 ~ 31)");
+	
+	// 현재 날짜와 비교
+	let nowday = new Date();	// 오늘
+	let birth = new Date();		// 생일날짜
+	
+	// 자신의 생일 설정
+	birth.setMonth(birthMonth - 1);
+	birth.setDate(birthDay);
+	
+	// mSecond가 -값이 나오면 지난 생일
+	let mSecond = birth.getTime() - nowday.getTime();
+	if(mSecond <= 0){
+		let birthYear = birth.getFullYear();
+		birth.setFullYear(birthYear + 1);
+		mSecond = birth.getTime() - nowday.getTime();
+	}
+	
+	let days = mSecond / (24 * 60 * 60 * 1000);
+	
+	document.getElementById("days").innerHTML = days;
+}
+
+</script>
+
+
+<br><br><br><br>
+</body>
+</html>
