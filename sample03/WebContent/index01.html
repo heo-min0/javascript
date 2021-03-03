@@ -6,5 +6,47 @@
 </head>
 <body>
 
+<p id="demo">p tag</p>
+
+<h3 id="h3">
+최근 SNS 상에 '#사장님힘내세요' 해시태그를 달고 수기로 직접 이 같은 응원문구를 쓴 영수증 사진이 줄지어 올라오고 있다. 코로나 때문에 사정이 어려워진 동네 가게의 음식을 주문하고 영수증과 인증 사진을 찍어 자영업자들을 응원하는 운동이 벌어진 것이다.
+</h3>
+
+<script type="text/javascript">
+let str = document.getElementById("h3").innerHTML;
+//alert(str);
+// string
+let pos = str.indexOf("최"); //문자 위치
+pos = str.search("사장님"); //문자열 위치
+pos = str.slice(4, 7);
+pos = str.substr(4, 7);
+
+/* let mystr = "해시태그";
+str.slice(str.search(mystr), pos + mystr.length +1); */
+
+document.getElementById("demo").innerHTML = pos;
+
+let str1, str2;
+str1 = "hello";
+str2 = 'hell';
+str2 = str2 + "o";
+
+if (str1 == str2) {	alert("같은문자열");}
+
+str = 'aa,bb,cc,dd';
+let arr = str.split(',');
+
+alert(arr[1]);
+
+
+
+</script>
+
 </body>
 </html>
+
+
+
+
+
+
