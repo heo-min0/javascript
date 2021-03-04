@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<!-- <body onload="checkMessage()">
+<p id="p1"></p>
+
+<script type="text/javascript">
+function checkMessage() {
+	document.getElementById("p1").innerHTML = 'checkMessage() 호출';
+}
+</script>
+</body> -->
+
+<!-- <body onload="viewScroll()">
+<pre>
+누군가 당신에게 와서 이렇게 말한다.
+"야, 너처럼 생긴 사람은 대개 폭력성이 강하더라고." 혹은 이렇게도 말한다.
+"그리고 너는 아파트에서 사는 건 안 어울려. 마당에서 사는 게 맞겠다." 
+일정 대상 전체를 싸잡아 편견을 부여하거나 낮잡아 보는 것, 그걸 대개 '인종차별'이라고 한다.
+ 이게 옳지 않다는 건 이미 공감대가 형성돼 있다. 
+ 그렇다면 '개종차별'은 어떤가. 
+ 앞에서 든 사례는, 어떤 개들에겐 실제 일어나고 있는 일이니.﻿
+
+목줄이 풀린 개가, 목줄을 한 개에게 달려왔다. 
+묶여 있던 개는 별 수 없이 물렸다. 
+얼굴은 두 번 물렸고, 뒷다리는 한 번 물렸다. 
+개 두 마리 중 하나는 진돗개, 또 다른 하나는 소형견이다. 
+누가 누구를 물었을까.
+
+당연히 진돗개가 소형견을 물었다고 생각하는가. 아니다. 
+위 사례에선 진돗개 백약이가 소형견에게 물렸다. 
+소형견 보호자는 그럼에도 이렇게 말했단다. 
+"진돗개는 사나우니까, 목줄 하고 다녀라!" 때로 시비가 붙여 경찰을 부르니
+ 또 이렇게 말했단다. "진돗개는 입마개 해야 되지 않아요?"
+
+진돗개도 이처럼 물린다. 정확히 얘기하면 진돗개는 물기도 하고, 또 물리기도 한다. 진돗개인 게 중요한 게 아니다. '목줄이 풀린 개'가 문제였던 거고, 그게 그 어떤 종이어도 물 수 있다. 관리를 부실하게 한 보호자 잘못이었다.
+
+━
+"진돗개는 무서운 놈이야"…자식 같은 내 개에게
+━
+
+진돗개 보호자들이 겪는 편견을 제보해달라고 했다. 그걸 빠짐 없이 정리했더니, A4 용지 기준으로 무려 20장이 넘게 나왔다. 차마 다 옮길 수조차 없다.
+사납고 공격성이 크다는 인식이 가장 많다. 계피(진도 믹스) 보호자가 동물병원에 갔을 때 이런 말을 들었다. "이런 개는 크고 사냥견이라, 조심해야 해요. 주인까지 다 물어버려요." 산책하다가 어떤 개 보호자가 이런 말도 했다. "이거 진돗개인가? 그래서 내가 산책시키다가 숨었지!"
+
+진솔이(6살, 진돗개)도 산책하다 비슷한 일을 겪었다. 실외 배변을 선호해 하루에 세 번 나간단다. 그러다 이런 말을 들었다. "큰 개를 왜 데리고 나와!" "공원에 개 데려오지말어!" 진솔이 보호자는 "이런 소린 하도 많이 들어서 적응이 됐다"고 했다.
+
+태산이(3살, 진돗개)가 킁킁 냄새 맡으며 즐겁게 산책하던 날, 지나가던 이가 이렇게 말했다. "쟤 무서운 놈이야." "넌 쟤한테 물리면 한입거리야, 물리면 큰일나." 태산이는 친화력이 좋아 매너 있게 다가가는 데도. 태산이 보호자는 "사람으로 치면 길가다 마주친 이에게 '넌 사람 잘 때리겠다'라고 말하는 것과 마찬가지"라고 했다.
+
+막연히 공격할 거라 느끼니 또 자주하는 말이, "입마개 왜 안 해"다. 진돗개는 법적으로 입마개를 해야하는 맹견이 아님에도. 인천에서 진도 믹스(2살)를 키우는 보호자는 "저희 강아지는 사람에게 흥분하거나 짖지도 않고 무관심한데, 적대적인 사람들이 '저런 개는 입마개 해야지'라고 말하며 간다"고 했다.
+</pre>
+
+<script type="text/javascript">
+let posY = 0;
+function viewScroll() {
+	window.scroll(0, posY);
+	posY = posY + 2;
+	if (posY == 300) posY = 0;
+	
+	setTimeout("viewScroll()", 100)
+}
+</script>
+</body> -->
+
+<body>
+나이 : <input type="text" onblur="isRegNum()" size="10" maxlength="2">세<br>
+<br>
+
+<script type="text/javascript">
+function isRegNum() {
+	alert('onblur 실행');
+}
+</script>
+
+<br><br><br>
+우편번호 : <br>
+<input type="text" size="5" maxlength="3" onchange="isPosNum(this)">
+-
+<input type="text" size="5" maxlength="3" onchange="isPosNum(this)">
+<br>
+
+<select onchange="changeVal()" id="sel">
+	<option value="apple">사과</option>
+	<option value="pear">배</option>
+	<option value="banana">바나나</option>
+</select>
+
+<script type="text/javascript">
+function isPosNum(obj) {
+	let str = obj.value;
+	if (str.match(/[^0-9]/g)) { //숫자가 아닌 문자가 포함된 경우
+		alert("문자포함됨");
+	}
+}
+function changeVal() {
+	//alert("changeVal")
+	alert( document.getElementById("sel").value );
+}
+</script>
+
+<br><br>
+
+<input type="text" name="title">
+<script type="text/javascript">
+/* document.getElementsByName("title")[0].onkeydown
+= function name(event) {
+	console.log("keydown keycode:" + event.keyCode);
+} */
+
+document.getElementsByName("title")[0].onkeypress
+= function name(event) {
+	console.log("keypres keycode:" + event.keyCode);
+}
+</script>
+
+<br><br><br>
+
+<input type="image" src="./img/san0.gif"
+	onmousedown="mouseDown(this)"
+	onmouseup="mouseUp(this)"
+	onmouseover="mouseOver(this)"
+	onmouseout="mouseOut(this)">
+
+<script type="text/javascript">
+function mouseDown(obj) {
+	obj.src = "./img/san1.gif";
+}
+function mouseUp(obj) {
+	obj.src = "./img/san0.gif";
+}
+function mouseOver(obj) {
+	obj.src = "./img/san2.gif";
+}
+function mouseOut(obj) {
+	obj.src = "./img/san0.gif";
+}
+</script>
+
+<br><br><br>
+
+<a href="#" onmouseover="document.box.src='img/surprise.gif'"
+			onmouseout="document.box.src='img/box.gif'">
+ <img alt="" src="img/box.gif" name="box">
+</a>
+
+
+
+
+
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div>
+<h2>(문제)</h2>
+<p>탑건은 어느 군 영화?</p>
+<button type="button" onclick="cli()" ondblclick="dcli()">답을보다</button>
+<p id="one">한번클릭 힌트</p>
+<p id="two">두번클릭 답</p>
+</div>
+<script type="text/javascript">
+function cli() {
+	document.getElementById("one").innerHTML = "힌트";
+}
+function dcli() {
+	document.getElementById("two").innerHTML = "해군";
+}
+</script>
+<br><br><br><br>
+
+<div>
+<h1>X<sup>2</sup>-5X = -6</h1>
+<button type="button" onclick="re(1)">x=1</button>
+<button type="button" onclick="re(2)">x=2</button>
+<button type="button" onclick="re(3)">x=3</button>
+<button type="button" onclick="re(4)">x=4</button>
+<button type="button" onclick="re(5)">x=5</button>
+</div>
+<script type="text/javascript">
+function re(n) {
+	let a = Math.pow(n, 2) - 5*n;
+	if (a == -6) {	alert('정답');}
+	else {alert('오답');}
+}
+</script>
+<br><br><br><br>
+
+<div>
+<table border="1">
+<tr>
+	<td>네이버</td> <td>http://www.naver.com</td>
+	<td>
+		<button type="button" onclick="lili(0)">열기</button>
+	</td>
+</tr>
+<tr>
+	<td>다음</td> <td>http://www.daum.net</td>
+	<td>
+		<button type="button" onclick="lili(1)">열기</button>
+	</td>
+</tr>
+<tr>
+	<td>줌</td> <td>http://zum.com</td>
+	<td>
+		<button type="button" onclick="lili(2)">열기</button>
+	</td>
+</tr>
+</table>
+<script type="text/javascript">
+let a = document.getElementsByTagName("td");
+for (i = 0; i < a.length; i++) {
+	if(i%3==0){
+		a[i].style.backgroundColor = "green";
+	}
+}
+function lili(m) {
+	let url = a[(m*3)+1].innerHTML;
+	location.href = url;
+}
+</script>
+</div>
+
+<br><br><br><br>
+
+<div style="background-color: black; color: white; border-color: red;">
+	<h2>사진들</h2>
+	
+	<div style="width: 300px; height: 450px; float: left;
+	 border-style:solid; border-color: yellow; border-width: 10px; margin: 10px" >
+		<img alt="" src="./img/pic01.jpg" id="imm">
+	</div>
+
+	<div>
+		사진선택<br>
+		<select id="se" onchange="sel()">
+			<option>사진선택</option>
+			<option value="1">장소1</option>
+			<option value="2">장소2</option>
+			<option value="3">장소3</option>
+			<option value="4">장소4</option>
+		</select>
+	</div>
+	<div style="clear: both;"></div>
+</div>
+
+<script type="text/javascript">
+function sel() {
+	let val = document.getElementById("se").value;
+	switch (val) {
+		case "1": document.getElementById("imm").src = "./img/pic01.jpg"; break;
+		case "2": document.getElementById("imm").src = "./img/pic02.jpg"; break;
+		case "3": document.getElementById("imm").src = "./img/pic03.jpg"; break;
+		case "4": document.getElementById("imm").src = "./img/pic04.jpg"; break;	
+	}
+}
+</script>
+
+
+
+
+<br><br><br><br>
+</body>
+</html>
+
+

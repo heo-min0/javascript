@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h3>단가 수량 일람표</h3>
+<table id="ta" border="1">
+	<tr>
+		<th>개수</th> <th>제품A</th> <th>제품B</th> <th>상품C</th>
+	</tr>
+</table>
+
+<script type="text/javascript">
+for (var j = 1; j < 11; j++) {
+	let trtag = document.createElement("tr");
+	let thtag = document.createElement("th");
+	let a = document.createTextNode(j);
+	thtag.appendChild(a);
+	
+	let element = document.getElementById("ta");
+	element.appendChild(trtag);
+	element.appendChild(thtag);
+	
+	let pri = [300,450,520];
+	
+	for (var i = 0; i <	3; i++) {
+		let tdtag = document.createElement("td");
+		let t1 = document.createTextNode( (pri[i]*j) + "원");
+		tdtag.appendChild(t1);
+		element.appendChild(tdtag);
+	}
+}
+</script>
+
+
+</body>
+</html>
