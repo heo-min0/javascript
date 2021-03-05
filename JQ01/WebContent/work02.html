@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+<!-- focus, blur를 사용하여 기입하고 있는 리소스를 구별할 수 있도록 하라.
+그리고 확인 화면으로 이동하면 *.jsp 파일에서 데이터를 받아서 출력하도록 하라. -->
+<form action="" name="infom">
+이름 : <input type="text" name="name1" onfocus="fcin()">
+<br><br>
+
+우편번호 : <input type="text" name="zipcode1" size="7">
+		- <input type="text" name="zipcode2" size="7">
+ <button type="button">주소변환</button>
+<br><br>
+
+주소 : <textarea rows="3" cols="30" name="address"></textarea>
+<br><br>
+
+전화번호 : <input type="text" name="phnum1" size="7">
+		- <input type="text" name="phnum2" size="7">
+		- <input type="text" name="phnum3" size="7">
+<br><br>
+
+배달시간 : 
+<select name="time">
+	<option>지정하지 않음</option>
+	<option value="1012">10:00 ~ 12:00</option>
+	<option value="1215">12:00 ~ 15:00</option>
+	<option value="1517">15:00 ~ 17:00</option>
+	<option value="1720">17:00 ~ 20:00</option>
+</select>
+<br><br>
+
+영수증요청 : <input type="checkbox" name="receipt">
+<br><br>
+
+메일 매거진을 수신 : 
+<input type="radio" name="mail" value="">신청
+<input type="radio" name="mail" value="">신청하지 않음
+<br><br>
+
+<input type="submit" name="chk" value="확인화면으로 진행"><br>
+</form>
+
+<script type="text/javascript">
+	let obj = document.infom;
+	//console.log(aa);
+/* $(document).ready(function() {
+	$("input").attr("onfocus", "func(this)");
+	$("input").attr("onblur", "funout()");
+	$("textarea").attr("onfocus", "func(this)");
+	$("textarea").attr("onblur", "funout()");
+	$("select").attr("onfocus", "funsel(this)");
+	$("select").attr("onblur", "funout()");
+}); */
+
+function func(ab) {
+	for (var i = 0; i < list.length; i++) {
+		let id = list[i].getAttribute("id");
+		let idta = listta[0].getAttribute("id");
+		if (id==ab.id) {document.getElementById("ccc").innerHTML = id;}
+		if (idta==ab.id) {document.getElementById("ccc").innerHTML = idta;}
+	}
+}
+
+function fcin() {
+	let name2 = $(this).attr("name");
+	alert(name2);
+}
+
+function fcout() {
+	let name = document.getElementById("name").value;
+	let age = document.getElementById("age").value;
+	location.href = "NewFile.jsp?name=" + name + "&age=" + age
+			
+	" NewFile.jsp? name=홍길동 & age=24 "
+}
+/*focus, blur를 사용하여 기입하고 있는 리소스를 구별할 수 있도록 하라.
+그리고 확인 화면으로 이동하면 *.jsp 파일에서 데이터를 받아서 출력하도록 하라.*/
+</script>
+
+</body>
+</html>
+
+

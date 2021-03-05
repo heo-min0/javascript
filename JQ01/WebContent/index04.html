@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<style type="text/css">
+td{ text-align: center;}
+.back{ color: fuchsia; }
+</style>
+</head>
+<body>
+
+<table border="1">
+<col width="50"><col width="100"><col width="50">
+<tr>
+	<th>번호</th><th>이름</th><th>나이</th>
+</tr>
+<tr class="cls">
+	<th>1</th><td>홍길동</td><td>24</td>
+</tr>
+<tr class="cls">
+	<th>2</th><td>성춘향</td><td>16</td>
+</tr>
+<tr class="cls">
+	<th>3</th><td>일지매</td><td>22</td>
+</tr>
+</table>
+
+<p>p tag</p>
+<button type="button">버튼</button>
+<input type="button" id="btn" value="input">
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$("tr.cls").mouseover(function() {
+		$(this).css("background", "#00ff00");
+	});
+	$("tr.cls").mouseout(function() {
+		$(this).css("background", "white");
+	});
+	$("button").click(function() {
+		$("p").css("background", "#0000ff"); //setter
+		$("p").text("여기는 p 태그");
+		
+		let color = $("p").css("background") //property getter
+		let text = $("p").text()
+		
+		//attribute
+		//속성추가
+		$("p").attr("id", "pid");
+		//alert( $("p").attr("id")  );
+		//$("p").attr("class", "back");
+		$("p").addClass("back");
+		
+		//html(), text(), val(), css(), attr(), prop()
+	});	
+	$("#btn").click(function() {
+		$("p").removeClass("back");
+	})
+});
+</script>
+
+</body>
+</html>
