@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<style type="text/css">
+.q05{
+	color: #aabbcc;
+	border: 2px solid;
+}
+.q08{
+	padding: 10px;
+	border: #000 2px solid;
+	background-color: gray;
+}
+</style>
+</head>
+<body>
+
+<button type="button">실행</button>
+<p id="q01">Hello JQuery</p>
+<p id="q02">Hello JQuery</p>
+<p id="q03">Hello JQuery</p>
+<p id="q04">Naver Home Page</p>
+<ul id="q05">
+	<li>apple</li><li>복숭아</li><li>딸기</li>
+</ul>
+<p id="q06">최선을 다 함으로</p>
+<ul id="q07">
+	<li>coffee</li>
+</ul>
+<p id="q08">나는 문제 없어</p>
+<div class="q08"><p id="q09">나는 문제 없어</p></div>
+<p id="q10"><a href="http://www.google.com">Google Home Page</a></p>
+
+<script type="text/javascript">
+$("button").click(function() {
+	$("#q01").css("color", "#ff0000"); //font color
+	$("#q02").css({   //font color + bgcolor
+		"color":"#ff0000",
+		"background-color":"#ffff00"
+	});
+	$("#q03").text("헬로우 제이쿼리");
+	$("#q03").html("<b>헬로우</b> 제이쿼리");
+	$("#q04").html("<a href='http://www.naver.com'>Naver</a>");
+	$("#q05").addClass("q05");
+	let li = $("<li></li>").text("grape");
+	$("#q05").append(li);
+	$("#q06").prepend("<p>끝까지</p>");
+	$("#q06").append("<p>나는 성공할 것이다 </p>");
+	//$("#q07 li").before("<li>tea</li>");
+	//$("#q07 li").after("<li>cocoa</li>");
+	$("#q07").children().before("<li>tea</li>");
+	$("#q07").children().after("<li>milk</li>");
+	$("#q08").wrap("<div class='q08'></div>");
+	$("#q09").unwrap("div.q08");
+	$("#q10 a").removeAttr("href");
+})
+</script>
+
+</body>
+</html>

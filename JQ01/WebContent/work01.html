@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<div>
+<div class="ph">
 <table>
 <tr>
 	<td>
@@ -32,22 +32,22 @@
 </div>
 <script type="text/javascript">
 $(document).ready(function() {
-	$("td>img").mouseover(function() {
+	$(".ph img").mouseover(function() {
 		$(this).addClass("cls");
 	});
-	$("td>img").mouseout(function() {
+	$(".ph img").mouseout(function() {
 		$(this).removeClass("cls");
 	});
 });
 </script>
 <br><br><br>
 
-<div>
+<div id="sw">
 <img alt="" src="./img/photo_a.jpg" id="imga">
 <img alt="" src="./img/photo_b.jpg" id="imgb" style="display: none;">
 </div>
 <script type="text/javascript">
-$(document).ready(function() {
+/* $(document).ready(function() {
 	$("#imga").click(function() {
 		$("#imga").hide();
 		$("#imgb").show();
@@ -56,19 +56,43 @@ $(document).ready(function() {
 		$("#imgb").hide();
 		$("#imga").show();
 	});
+}); */
+$(document).ready(function() {
+	let num = 0;
+	/* $("#imga").click(function() {
+		if(num==0){
+			$("#imga").attr("src", "./img/photo_b.jpg");
+			num=1;
+		}
+		else{
+			$("#imga").attr("src", "./img/photo_a.jpg");
+			num=0;
+		}
+	}); */
+	$("#imga").hover(
+		function() { //마우스 올렸을때
+			$("#imga").attr("src", "./img/photo_b.jpg");
+			num=1;
+		},
+		function() { //딴데 갔을때
+			$("#imga").attr("src", "./img/photo_a.jpg");
+			num=0;
+		}
+	);
+	
 });
 </script>
 <br><br><br>
 
-<div>
+<div id="ta">
 <img alt="" src="./img/img01.jpg" title="성 자비에르 성당(외관)">
 <img alt="" src="./img/img02.jpg" title="성 자비에르 성당(내부)">
 <img alt="" src="./img/img03.jpg" title="은행">
 <img alt="" src="./img/img04.jpg" title="가로등">
 </div>
 <script type="text/javascript">
-$(document).ready(function() {
-	$("img").click(function() {
+$(document).ready(function() { //사용자지정 attr을 사용해도 된다.
+	$("#ta>img").click(function() {
 		let title1 = $(this).attr("title");
 		alert("「" + title1 + "」의 사진입니다.");
 	});
@@ -80,14 +104,28 @@ $(document).ready(function() {
 
 <script type="text/javascript">
 $(document).ready(function() {
-	$("#auto").append(addImgs);
+	//$("#auto").append(addImgs);
+	for (i = 1; i < 10; i++) {
+		/* let img = $("<img></img>")
+			.attr("src", "./img/photo_"+i+".jpg")
+			.attr("class", "photo"); */
+		
+		let img = $("<img></img>").attr( {
+			"src" : "./img/photo_"+i+".jpg",
+			"class" : "photo"
+		} );
+		
+		$("#auto").append(img);
+	}
+	
 	$("#auto>img").click(function() {
+	//$(".photo").click(function() {
 		$(this).remove();
 	});
 });
 
 function addImgs() {
-	for (var i = 1; i < 10; i++) {
+	for (i = 1; i < 10; i++) {
 		let img = document.createElement("img");
 		img.setAttribute("src", "./img/photo_"+i+".jpg")
 		let element = document.getElementById("auto");
@@ -153,9 +191,3 @@ $(document).ready(function() {
 <br><br><br>
 </body>
 </html>
-
-
-
-
-
-

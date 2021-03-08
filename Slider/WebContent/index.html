@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+
+<h1>JQuery-UI slider</h1>
+<img alt="" src="img/p1.jpg" style="opacity: ">
+<img alt="" src="img/p2.jpg">
+<img alt="" src="img/p3.jpg">
+
+<br><br><br>
+
+<div id="slider1" style="width: 250px"></div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#slider1").slider({
+		animate: true,
+		range: "min",
+		value: 100,
+		slide: function (event, ui) {
+			console.log("slider move");
+			$("img").css("opacity", ui.value / 100);
+		}
+	});
+});
+</script>
+
+</body>
+</html>
